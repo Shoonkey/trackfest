@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "motorfestrack-it",
+  "productName": "trackfest",
   "version": "0.1.0",
-  "identifier": "com.motorfestrack-it.app",
+  "identifier": "com.trackfest.app",
   "build": {
     "beforeDevCommand": "pnpm dev",
     "devUrl": "http://localhost:1420",
@@ -12,9 +12,8 @@
   "app": {
     "windows": [
       {
-        "title": "motorfestrack-it",
-        "width": 800,
-        "height": 600
+        "title": "trackfest",
+        "maximized": true
       }
     ],
     "security": {

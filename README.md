@@ -1,3 +1,5 @@
+# TrackFest
+
 A tool for tracking vehicle piece sets from the game [The Crew: Motorfest](https://en.wikipedia.org/wiki/The_Crew_Motorfest).
 
 Built using [Tauri](https://v2.tauri.app/) and [Preact](https://preactjs.com/).
