@@ -13,4 +13,15 @@ export const Container = styled.div`
 export const Header = styled.header`
   display: flex;
   gap: 0.5rem;
+
+  .title {
+    /* compensates the font padding so the text is centered in the element */
+    padding-top: 6px;
+  }
+`;
+
+export const Deck = styled.main`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 `;

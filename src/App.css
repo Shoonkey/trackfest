@@ -31,9 +31,6 @@ html, body {
     font-weight: normal;
     color: var(--title-color);
     letter-spacing: 0.12ch;
-
-    /* compensates the font padding so the text is centered in the element */
-    padding-top: 6px;
   }
 
 .icon {

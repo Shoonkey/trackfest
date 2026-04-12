@@ -1,7 +1,8 @@
 import { useAtom } from "jotai";
 import { themeAtom } from "../../global-state";
 import SetLegend from "../../components/SetLegend";
-import { Container, Header } from "./style";
+import { Container, Deck, Header } from "./style";
+import VehicleSetCard from "../../components/VehicleSetCard";
 
 export default function Homepage() {
   const [appTheme, setAppTheme] = useAtom(themeAtom);
@@ -12,6 +13,10 @@ export default function Homepage() {
         <h1 className="title">TrackFest</h1>
         <SetLegend />
       </Header>
+      <Deck>
+        <VehicleSetCard title="Street I" state={[6, 6, 6, 6, 6, 6, 5]} />
+        <VehicleSetCard title="Hypercar" state={[0, 2, 4, 6, 6, 0, 5]} />
+      </Deck>
     </Container>
   );
 }
