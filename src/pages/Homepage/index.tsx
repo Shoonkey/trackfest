@@ -1,20 +1,16 @@
-import { useAtomValue } from "jotai";
+import { useAtom } from "jotai";
 import { themeAtom } from "../../global-state";
+import SetLegend from "../../components/SetLegend";
 import { Container, Header } from "./style";
 
 export default function Homepage() {
-  const appTheme = useAtomValue(themeAtom);
+  const [appTheme, setAppTheme] = useAtom(themeAtom);
 
   return (
     <Container className={appTheme === "auto" ? "" : `${appTheme}-theme`}>
       <Header>
-        <h1 className="title">TrackerFest</h1>
-        <div className="map-legend-container">
-          <ul className="map-legend">
-            <li></li>
-          </ul>
-          <button class="show-legend-btn">Show legend</button>
-        </div>
+        <h1 className="title">TrackFest</h1>
+        <SetLegend />
       </Header>
     </Container>
   );

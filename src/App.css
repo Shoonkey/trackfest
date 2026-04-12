@@ -1,12 +1,15 @@
 :root, .dark-theme {
   --bg-color: #2b2b2b;
-  --text-color: #8b8b8b;
+  --text-color: #9c9c9c;
+  --title-color: #e7e7e7;
+  --icon-color: #ffd754;
 }
 
 @media (prefers-color-scheme: light) {
   :root, .light-theme {
     --bg-color: #e2e2e2;
     --text-color: #383838;
+    --highlight-color: #970f97;
   }
 }
 
@@ -17,8 +20,22 @@ html, body, h1, h2, h3, h4, h5, h6, p, ul {
 html, body {
   width: 100%;
   min-height: 100dvh;
+  font-family: Cabin, Arial, Helvetica, sans-serif;
   font-size: 16px;
   background: var(--bg-color);
   color: var(--text-color);
 }
 
+.title {
+    font-family: Lalezar, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: var(--title-color);
+    letter-spacing: 0.12ch;
+
+    /* compensates the font padding so the text is centered in the element */
+    padding-top: 6px;
+  }
+
+.icon {
+  color: var(--icon-color);
+}
