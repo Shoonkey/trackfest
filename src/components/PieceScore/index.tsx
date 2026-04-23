@@ -1,14 +1,14 @@
 import { useMemo } from "preact/hooks";
 import { CheckIcon } from "@phosphor-icons/react";
-import PieceType from "../../shared/PieceType";
+import SetType from "../../shared/SetType";
 
 interface PieceScoreProps {
-  pieceType?: PieceType; // in case there's ever a different maximum amount of pieces for a given type
+  pieceType?: SetType; // in case there's ever a different maximum amount of pieces for a given type
   pieces: number;
 }
 
 export default function PieceScore({ pieces }: PieceScoreProps) {
-  const maxPieces = useMemo(() => 6, []);
+  const maxPieces = useMemo(() => 7, []);
 
   return pieces === maxPieces ? (
     <CheckIcon size={24} color="lightgreen" />

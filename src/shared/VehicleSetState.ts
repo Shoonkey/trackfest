@@ -1,5 +1,6 @@
-import PieceType from "./PieceType";
+import PartType from "./PartType";
+import SetType from "./SetType";
 
-type VehicleSetState = Record<PieceType, number>;
+type VehicleSetState = Record<SetType, PartType>;
 
 export default VehicleSetState;

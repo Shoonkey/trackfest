@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
+interface DialogButtonProps {
+  command?: string;
+  commandFor?: string;
+}
+
+export const Container = styled.button<DialogButtonProps>`
+  all: unset;
   background: #131313;
   padding: 1.5rem 2rem;
   border-radius: 1.25rem;
