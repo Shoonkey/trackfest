@@ -21,11 +21,3 @@ export const Table = styled.table`
     color: var(--text-color);
   }
 `;
-
-export const BuildedPart = styled.td`
-  background-color: #4caf50;
-`;
-
-export const UnbuildedPart = styled.td`
-  background-color: #ffde25;
-`;

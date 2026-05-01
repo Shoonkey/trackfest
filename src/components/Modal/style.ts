@@ -7,17 +7,18 @@ export const Dialog = styled.dialog`
   border-radius: 1rem;
   padding-block: 1.5rem;
   padding-inline: 0.5rem;
-  background: #131313;
-  color: #e7e7e7;
-
+  background: var(--card-bg-color);
+  color: var(--title-color);
+  
   &::backdrop {
     background: #000000a1;
   }
 
   .close-btn {
     all: unset;
+    cursor: pointer;
     background-color: transparent;
-    color: #e7e7e7;
+    color: var(--title-color);
   }
 
   .close-btn > svg {

@@ -1,4 +1,3 @@
-import PartState from "../../shared/PartState";
 import SetType from "../../shared/SetType";
 
 export function getSetTypeLabel(setType: SetType) {

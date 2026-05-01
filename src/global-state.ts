@@ -1,5 +1,5 @@
 import { atom } from "jotai";
 
-type AppTheme = "auto" | "light" | "dark";
+type AppTheme = "dark" | "light";
 
-export const themeAtom = atom<AppTheme>("auto");
+export const themeAtom = atom<AppTheme>("dark");

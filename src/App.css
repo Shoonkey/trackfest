@@ -3,14 +3,14 @@
   --text-color: #9c9c9c;
   --title-color: #e7e7e7;
   --icon-color: #ffd754;
+  --card-bg-color: #131313;
+  --card-bg-color-hovered: #090909;
 }
 
-@media (prefers-color-scheme: light) {
-  :root, .light-theme {
-    --bg-color: #e2e2e2;
-    --text-color: #383838;
-    --highlight-color: #970f97;
-  }
+.light-theme {
+  --bg-color: #e2e2e2;
+  --text-color: #383838;
+  --highlight-color: #970f97;
 }
 
 html, body, h1, h2, h3, h4, h5, h6, p, ul {

@@ -12,6 +12,7 @@ enum VehicleType {
   Monster,
   Powerboat,
   Plane,
+  CupCar
 }
 
 export default VehicleType;
