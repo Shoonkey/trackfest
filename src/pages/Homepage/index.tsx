@@ -4,35 +4,20 @@ import SetLegend from "../../components/SetLegend";
 import { Container, Deck, Header } from "./style";
 import VehicleSetCard from "../../components/VehicleSetCard";
 import VehicleSetInfo from "../../shared/VehicleSetInfo";
-import VehicleType from "../../shared/VehicleType";
+import { useEffect, useState } from "preact/hooks";
+import { getSets } from "../../services/HomepageService";
 
 export default function Homepage() {
   const [appTheme, setAppTheme] = useAtom(themeAtom);
+  const [vehicleSetInfo, setVehicleSetInfo] = useState<VehicleSetInfo[]>([]);
 
-  const vehicleSets: VehicleSetInfo[] = [
-    {
-      category: VehicleType.Street,
-      sets: [
-        [1, 2, 1, 1, 2, 1, 1],
-        [0, 1, 0, 1, 1, 1, 0],
-        [1, 1, 1, 1, 1, 1, 1],
-        [1, 0, 1, 0, 2, 1, 1],
-        [1, 1, 1, 0, 2, 1, 0],
-        [1, 0, 1, 1, 1, 1, 0],
-      ],
-    },
-    {
-      category: VehicleType.Hypercar,
-      sets: [
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 1, 0, 1, 1, 1, 0],
-        [1, 1, 1, 2, 1, 1, 1],
-        [1, 0, 1, 0, 1, 1, 1],
-        [1, 1, 1, 0, 1, 1, 0],
-        [0, 1, 1, 1, 1, 1, 0],
-      ],
-    },
-  ];
+  useEffect(() => {
+    getSets().then((data) => setVehicleSetInfo(data));
+  }, []);
+
+  const vehicleSetCards = vehicleSetInfo.map((set) => (
+    <VehicleSetCard key={set.category} state={set} />
+  ));
 
   return (
     <Container className={appTheme === "auto" ? "" : `${appTheme}-theme`}>
@@ -40,10 +25,7 @@ export default function Homepage() {
         <h1 className="title">TrackFest</h1>
         <SetLegend />
       </Header>
-      <Deck>
-        <VehicleSetCard state={vehicleSets[0]} />
-        <VehicleSetCard state={vehicleSets[1]} />
-      </Deck>
+      <Deck>{vehicleSetCards}</Deck>
     </Container>
   );
 }
