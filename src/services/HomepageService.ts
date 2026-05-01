@@ -3,7 +3,6 @@ import VehicleSetInfo from "../shared/VehicleSetInfo";
 
 export async function getSets(): Promise<VehicleSetInfo[]> {
   let res = await invoke("get_sets");
-  console.log(res);
   return JSON.parse(res as string);
 }
 

@@ -1,7 +1,7 @@
 enum PartType {
   Brakes,
   Gearbox,
-  Ecu,
+  ECU,
   Motorcore,
   Exhaust,
   Suspension,

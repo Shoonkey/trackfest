@@ -12,12 +12,17 @@ import PieceScore from "../PieceScore";
 import SetModal from "../SetModal";
 import VehicleSetInfo from "../../shared/VehicleSetInfo";
 import VehicleType from "../../shared/VehicleType";
+import { CyclePieceStateFn } from "../../pages/Homepage";
 
 interface VehicleSetCardProps {
   state: VehicleSetInfo;
+  onUpdatePiece: CyclePieceStateFn;
 }
 
-export default function VehicleSetCard({ state }: VehicleSetCardProps) {
+export default function VehicleSetCard({
+  state,
+  onUpdatePiece,
+}: VehicleSetCardProps) {
   function getPiecesForSetType(setType: SetType) {
     const piecesForSet = state.sets[setType];
     if (!piecesForSet) return 0;
@@ -62,7 +67,11 @@ export default function VehicleSetCard({ state }: VehicleSetCardProps) {
           </li>
         </ul>
       </Container>
-      <SetModal id={`set-modal-${state.category}`} state={state} />
+      <SetModal
+        id={`set-modal-${state.category}`}
+        info={state}
+        onUpdatePiece={onUpdatePiece}
+      />
     </>
   );
 }

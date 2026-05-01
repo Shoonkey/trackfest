@@ -6,10 +6,19 @@ export const Table = styled.table`
 
   th,
   td {
-    border: 2px solid #030303;
+    position: relative;
+    border: thin solid #030303;
+  }
+
+  th {
     padding: 8px;
     text-align: center;
     min-width: 60px;
+    padding: 8px;
+  }
+
+  thead th:first-child {
+    color: var(--text-color);
   }
 `;
 
