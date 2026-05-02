@@ -7,12 +7,12 @@ import {
   MoneyWavyIcon,
 } from "@phosphor-icons/react";
 import SetType from "../../shared/SetType";
-import PieceScore from "../PieceScore";
+import PartScore from "../PartScore";
 import SetModal from "../SetModal";
 import VehicleSetInfo from "../../shared/VehicleSetInfo";
+import { getVehicleTypeLabel } from "../../shared/util";
 import { CyclePieceStateFn } from "../../pages/Homepage";
 import { Container } from "./styles";
-import { getVehicleTypeLabel } from "./util";
 
 interface VehicleSetCardProps {
   state: VehicleSetInfo;
@@ -23,19 +23,9 @@ export default function VehicleSetCard({
   state,
   onUpdatePiece,
 }: VehicleSetCardProps) {
-  function getPiecesForSetType(setType: SetType) {
-    const piecesForSet = state.sets[setType];
-    if (!piecesForSet) return 0;
-
-    return Object.values(piecesForSet).reduce(
-      (total, pieces) => (pieces > 0 ? total + 1 : total),
-      0,
-    );
-  }
-
   return (
     <>
-      <Container
+      <Container 
         command="show-modal"
         commandFor={`set-modal-${state.category}`}
       >
@@ -43,27 +33,27 @@ export default function VehicleSetCard({
         <ul className="set-state-list">
           <li className="set-state">
             <SpeedometerIcon weight="fill" size="1.35em" className="icon" />
-            <PieceScore pieces={getPiecesForSetType(SetType.NitroChemist)} />
+            <PartScore partState={state.sets[SetType.NitroChemist]} />
           </li>
           <li className="set-state">
             <MedalMilitaryIcon weight="fill" size="1.35em" className="icon" />
-            <PieceScore pieces={getPiecesForSetType(SetType.ScoreBreaker)} />
+            <PartScore partState={state.sets[SetType.ScoreBreaker]} />
           </li>
           <li className="set-state">
             <PuzzlePieceIcon weight="fill" size="1.35em" className="icon" />
-            <PieceScore pieces={getPiecesForSetType(SetType.LootDigger)} />
+            <PartScore partState={state.sets[SetType.LootDigger]} />
           </li>
           <li className="set-state">
             <TreasureChestIcon weight="fill" size="1.35em" className="icon" />
-            <PieceScore pieces={getPiecesForSetType(SetType.TreasureSniffer)} />
+            <PartScore partState={state.sets[SetType.TreasureSniffer]} />
           </li>
           <li className="set-state">
             <LightbulbIcon weight="fill" size="1.35em" className="icon" />
-            <PieceScore pieces={getPiecesForSetType(SetType.XpMagnet)} />
+            <PartScore partState={state.sets[SetType.XpMagnet]} />
           </li>
           <li className="set-state">
             <MoneyWavyIcon weight="fill" size="1.35em" className="icon" />
-            <PieceScore pieces={getPiecesForSetType(SetType.BucksMagnet)} />
+            <PartScore partState={state.sets[SetType.BucksMagnet]} />
           </li>
         </ul>
       </Container>

@@ -21,3 +21,17 @@ export const Table = styled.table`
     color: var(--text-color);
   }
 `;
+
+export const HelperText = styled.div`
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: var(--text-color);
+
+  .states {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0.1rem;
+  }
+`;

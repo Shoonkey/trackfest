@@ -21,7 +21,7 @@ function Modal(
     <Dialog id={id} ref={ref} className={className} onClose={onClose}>
       <Header>
         <Title>{title}</Title>
-        <button className="close-btn" command="close" commandfor={id}>
+        <button className="close-btn" command="close" commandfor={id} title="Close">
           <XIcon />
         </button>
       </Header>

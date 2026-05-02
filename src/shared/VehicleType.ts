@@ -8,11 +8,11 @@ enum VehicleType {
   Motocross,
   Rally,
   RallyRaid,
-  Demolition,
   Monster,
-  Powerboat,
+  CupCar,
+  Demolition,
   Plane,
-  CupCar
+  Powerboat,
 }
 
 export default VehicleType;

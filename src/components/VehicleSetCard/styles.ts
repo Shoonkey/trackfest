@@ -1,12 +1,7 @@
 import styled from "styled-components";
 import ClickableCard from "../ClickableCard";
 
-interface DialogButtonProps {
-  command?: string;
-  commandFor?: string;
-}
-
-export const Container = styled(ClickableCard)<DialogButtonProps>`
+export const Container = styled(ClickableCard)`
   .title {
     text-align: center;
     font-size: 2.35rem;

@@ -59,7 +59,7 @@ export default function Homepage() {
       <Header>
         <h1 className="title">TrackFest</h1>
         <SetLegend />
-        {/* TODO: improve light theme then add this component back: <ChangeThemeButton /> */}
+        <ChangeThemeButton />
       </Header>
       <Deck>
         {vehiclesListed.map((set) => (

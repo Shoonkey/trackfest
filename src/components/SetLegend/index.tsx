@@ -19,6 +19,7 @@ export default function SetLegend() {
       <button
         class="show-set-legend-btn"
         onClick={() => setShowSetLegend(!showSetLegend)}
+        title={`${showSetLegend ? "Hide" : "Show"} legend`}
       >
         {showSetLegend ? (
           <ArrowLineLeftIcon size={26} />

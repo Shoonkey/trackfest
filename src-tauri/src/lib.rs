@@ -14,7 +14,6 @@ fn get_sets(app: AppHandle) -> Result<String, String> {
     fs::create_dir_all(&path).map_err(|e| e.to_string())?;
 
     path.push(&SAVE_FILE_NAME);
-    println!("Data file path: {:?}", path);
 
     if !path.exists() {
         let data = include_str!("base_data.json");

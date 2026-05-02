@@ -2,7 +2,7 @@ import { MoonIcon, SunIcon } from "@phosphor-icons/react";
 import { useAtom } from "jotai";
 import { themeAtom } from "../../global-state";
 import { Container } from "./style";
-import { useEffect } from "preact/hooks";
+import { useEffect, useMemo } from "preact/hooks";
 
 export default function ChangeThemeButton() {
   const [appTheme, setAppTheme] = useAtom(themeAtom);
@@ -15,10 +15,18 @@ export default function ChangeThemeButton() {
     if (prefersLightTheme) setAppTheme("light");
   }, []);
 
+  const nextTheme = useMemo(
+    () => (appTheme === "dark" ? "light" : "dark"),
+    [appTheme],
+  );
+
+  // TODO: properly implement light theme before rendering element
+  return null;
+
   return (
     <Container
-      title="Change theme"
-      onClick={() => setAppTheme(appTheme === "dark" ? "light" : "dark")}
+      title={`Change to ${nextTheme} theme`}
+      onClick={() => setAppTheme(nextTheme)}
     >
       {appTheme === "dark" ? <MoonIcon size={26} /> : <SunIcon size={26} />}
     </Container>

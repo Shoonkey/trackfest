@@ -4,11 +4,13 @@ import VehicleSetInfo, { SetPartStateDict } from "../../shared/VehicleSetInfo";
 import VehicleType from "../../shared/VehicleType";
 import SetType from "../../shared/SetType";
 import PartType from "../../shared/PartType";
-import { Table } from "./style";
+import { HelperText, Table } from "./style";
 import { getSetTypeLabel } from "./util";
 import SetPieceState from "../SetPieceState";
 import { CyclePieceStateFn } from "../../pages/Homepage";
 import PartState from "../../shared/PartState";
+import State from "./State";
+import { getPieceStateColor, getVehicleTypeLabel } from "../../shared/util";
 
 interface SetModalProps {
   id: string;
@@ -58,7 +60,7 @@ export default function SetModal({ id, info, onUpdatePiece }: SetModalProps) {
   return (
     <Modal
       id={id}
-      title={VehicleType[info.category]}
+      title={getVehicleTypeLabel(info.category)}
       ref={dialogRef}
       onClose={() => onUpdatePiece(info.category, data)}
     >
@@ -71,6 +73,20 @@ export default function SetModal({ id, info, onUpdatePiece }: SetModalProps) {
         </thead>
         <tbody>{headers}</tbody>
       </Table>
+      <HelperText>
+        <p>Click on a cell to switch between</p>
+        <div className="states">
+          <State
+            color={getPieceStateColor(PartState.Starter)}
+            label="Starter"
+          />
+          <State
+            color={getPieceStateColor(PartState.Building)}
+            label="Building"
+          />
+          <State color={getPieceStateColor(PartState.Built)} label="Built" />
+        </div>
+      </HelperText>
     </Modal>
   );
 }
