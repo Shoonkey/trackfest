@@ -1,4 +1,4 @@
-import { useAtom, useAtomValue } from "jotai";
+import { useAtomValue } from "jotai";
 import { themeAtom } from "../../global-state";
 import SetLegend from "../../components/SetLegend";
 import { Container, Deck, Header } from "./style";

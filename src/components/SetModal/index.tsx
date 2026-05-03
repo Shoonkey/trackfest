@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "preact/hooks";
 import Modal from "../Modal";
 import VehicleSetInfo, { SetPartStateDict } from "../../shared/VehicleSetInfo";
-import VehicleType from "../../shared/VehicleType";
 import SetType from "../../shared/SetType";
 import PartType from "../../shared/PartType";
 import { HelperText, Table } from "./style";
