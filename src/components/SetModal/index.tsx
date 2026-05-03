@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "preact/hooks";
+import { useCallback, useEffect, useRef, useState } from "preact/hooks";
 import Modal from "../Modal";
 import VehicleSetInfo, { SetPartStateDict } from "../../shared/VehicleSetInfo";
 import VehicleType from "../../shared/VehicleType";
@@ -56,6 +56,16 @@ export default function SetModal({ id, info, onUpdatePiece }: SetModalProps) {
       </tr>
     );
   });
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    // makes it so the dialog closes if its backdrop is clicked on
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  }, [dialogRef]);
 
   return (
     <Modal

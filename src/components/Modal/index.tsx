@@ -1,6 +1,5 @@
 import { type Ref } from "preact";
 
-// import Button from "../Button";
 import { Dialog, Header, Title } from "./style";
 import { forwardRef, ReactNode } from "preact/compat";
 import { XIcon } from "@phosphor-icons/react";
